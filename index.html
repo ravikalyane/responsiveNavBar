@@ -1,169 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
-  <title>My Navbar</title>
-</head>
-<body>
-  <div class="navbar">
-    <div class="logo"><span class="web">Web</span> <span class="dev">Development</span></div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="">HOME</a></li>
-        <li><a href="">BLOG</a></li>
-        <li><a href="">CONTACT</a></li>
-        <li><a href="">ABOUT</a></li>
-        <li><a href="">PRICE</a></li>
-      </ul>
-    </div>
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-  </div>
-</body>
-<a href=""></a>
-<style>
-  *{
-    margin: 0;
-    padding: 0;
-  }
-  body{
-    overflow-x: hidden;
-    background-color: #00BFA5;
-  }
-  .logo{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 1.8rem;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-  .web{
-    color: #00C9DB;
-  }
-  .dev{
-    color: #7000F2;
-  }
-  .navbar{
-    display: flex;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    /*justify-content: space-around;*/
-    align-items: center;
-    background-color: #ffffff!important;
-    box-shadow: 0.5px 0.5px 1px rgb(97, 90, 90);
-    font-size: 0.875rem
-;
-    height: 10vh;
-    font-weight: 600;
-    font-family: 'Roboto', sans-serif;
-    background-color: rgb(79, 78, 83);
-    color: #202124;
-  }
-  .nav-links ul{
-    list-style: none;
-  }
-  .nav-links a{
-    text-decoration: none;  
-    color: #202124
-    }
-  .nav-links li{
-    display: inline;
-    text-decoration: none;
-    padding: 15px;
-  }
-  .nav-links li:hover{
-    background-color: rgb(250, 249, 249);
-  }
-  .burger{
-    position: absolute;
-    right: 10%;
-    display: none;
-    cursor: pointer;
-    border:rgb(241, 235, 235) 1px solid;
-    border-radius: 5px;
-    padding: 3px;
-  }
-  .burger div{
-    width: 30px;
-    height: 3px;
-    background-color: #5F6368;
-    margin: 5px;
-  }
-  @media screen and (max-width: 728px){
-    
-    .nav-links{
-      position: fixed;
-      right: 0;
-      top: 10vh;
-      height: 90vh;
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      /*justify-content: space-around;*/
-      align-items: center;
-      background-color: #fff;
-      transform: translateX(100%);
-      transition: 0.7s;
-    }
-    .showmenu{
-      transform: translateX(0%);
-    }
-    .nav-links li{
-      width: 100%;
-      padding: 20px 0;
-      text-align: center;
-      background-color: #fff;
-      /*border-bottom:#5F6368 1px solid;*/
-      box-shadow: 1px 1px 1px #5F6368;
-      margin: 1px;
-      
-    }
-    .logo{
-      padding-left: 20px;
-    }
-    .burger{
-      display: block;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-    }
-    .line1, .line2, .line3{
-      transition: 0.7s;
-    }
-    .line1-active{
-      transform: rotate(-45deg) translate(-5px,8px)
-    }
-    .line2-active{
-      opacity: 0;
-    }
-    .line3-active{
-      transform: rotate(45deg) translate(-10px,-2px)
-    }    
-  }
-</style>
-<script>
-  let burgerMenu = document.querySelector(".burger")
-  let menu = document.querySelector(".nav-links")
-  const lineOne = document.querySelector(".line1")
-  const lineTwo = document.querySelector(".line2")
-  const lineThree = document.querySelector(".line3")
-  
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet" />
+        <title>My Navbar</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo"><span class="web">Web</span> <span class="dev">Development</span></div>
 
-  burgerMenu.addEventListener('click', showMenu)
-  function showMenu(){
-    menu.classList.toggle("showmenu")
-    lineOne.classList.toggle('line1-active')
-    lineTwo.classList.toggle('line2-active')
-    lineThree.classList.toggle('line3-active')
-    //menu.style.color = "red"
-    console.log("hi")
-  }
-</script>
+            <ul class="nav-links">
+                <li><a href="">HOME</a></li>
+                <li><a href="">BLOG</a></li>
+                <li><a href="">CONTACT</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">PRICE</a></li>
+            </ul>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin-top: 10vh;
+            overflow-x: hidden;
+            background-color: #00bfa5;
+        }
+        .logo {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 1.8rem;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .web {
+            color: #00c9db;
+        }
+        .dev {
+            color: #7000f2;
+        }
+        .navbar {
+            display: flex;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            align-items: center;
+            background-color: #ffffff !important;
+            box-shadow: 0.5px 0.5px 1px rgb(97, 90, 90);
+            font-size: 0.875rem;
+            height: 10vh;
+            font-weight: 600;
+            font-family: "Roboto", sans-serif;
+            background-color: rgb(79, 78, 83);
+            color: #202124;
+        }
+        .nav-links ul {
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #202124;
+        }
+        .nav-links li {
+            display: inline;
+            text-decoration: none;
+            padding: 15px;
+        }
+        .nav-links li:hover {
+            background-color: rgb(250, 249, 249);
+        }
+
+        .burger {
+            position: absolute;
+            right: 10%;
+            height: 40px;
+            width: 40px;
+            background-color: #fff;
+            margin: auto;
+            border: rgb(145, 139, 139) 1px solid;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            display: none;
+        }
+        .line1 {
+            width: 30px;
+            height: 3px;
+            background-color: #5f6368;
+            transition: 0.5s;
+        }
+        .line2 {
+            width: 30px;
+            height: 3px;
+            background-color: #5f6368;
+            transition: 0.5s;
+        }
+        .line3 {
+            width: 30px;
+            height: 3px;
+            background-color: #5f6368;
+            transition: 0.5s;
+        }
+        @media screen and (max-width: 728px) {
+            .nav-links {
+                position: fixed;
+                right: 0;
+                top: 10vh;
+                height: 90vh;
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                /*justify-content: space-around;*/
+                align-items: center;
+                background-color: #fff;
+                transform: translateX(100%);
+                transition: 0.7s;
+            }
+            .showmenu {
+                transform: translateX(0%);
+            }
+            .nav-links li {
+                width: 100%;
+                padding: 20px 0;
+                text-align: center;
+                background-color: #fff;
+                box-shadow: 1px 1px 1px #5f6368;
+                margin: 1px;
+            }
+            .logo {
+                padding-left: 20px;
+            }
+            .burger {
+                display: flex;
+            }
+            .line1-active {
+                transform: translateY(10.8px) rotate(-45deg);
+            }
+            .line2-active {
+                opacity: 0;
+            }
+
+            .line3-active {
+                transform: translateY(-10.8px) rotate(45deg);
+            }
+        }
+    </style>
+    <script>
+        let burgerMenu = document.querySelector(".burger");
+        let menu = document.querySelector(".nav-links");
+        const lineOne = document.querySelector(".line1");
+        const lineTwo = document.querySelector(".line2");
+        const lineThree = document.querySelector(".line3");
+
+        burgerMenu.addEventListener("click", showMenu);
+        function showMenu() {
+            menu.classList.toggle("showmenu");
+            lineOne.classList.toggle("line1-active");
+            lineTwo.classList.toggle("line2-active");
+            lineThree.classList.toggle("line3-active");
+            //menu.style.color = "red"
+            console.log("hi");
+        }
+    </script>
 </html>
