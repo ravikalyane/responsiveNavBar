@@ -94,6 +94,7 @@
             justify-content: space-evenly;
             align-items: center;
             display: none;
+            transition: 0.5s;
         }
         .line1 {
             width: 30px;
@@ -148,6 +149,9 @@
             .burger {
                 display: flex;
             }
+            .burger-active{
+                border-radius: 50%;
+            }
             .line1-active {
                 transform: translateY(10.8px) rotate(-45deg);
             }
@@ -161,18 +165,19 @@
         }
     </style>
     <script>
-        let burgerMenu = document.querySelector(".burger");
-        let menu = document.querySelector(".nav-links");
-        const lineOne = document.querySelector(".line1");
-        const lineTwo = document.querySelector(".line2");
-        const lineThree = document.querySelector(".line3");
+        let burgerMenu = document.querySelector(".burger")
+        let menu = document.querySelector(".nav-links")
+        const lineOne = document.querySelector(".line1")
+        const lineTwo = document.querySelector(".line2")
+        const lineThree = document.querySelector(".line3")
 
-        burgerMenu.addEventListener("click", showMenu);
+        burgerMenu.addEventListener("click", showMenu)
         function showMenu() {
             menu.classList.toggle("showmenu");
-            lineOne.classList.toggle("line1-active");
-            lineTwo.classList.toggle("line2-active");
-            lineThree.classList.toggle("line3-active");
+            lineOne.classList.toggle("line1-active")
+            lineTwo.classList.toggle("line2-active")
+            lineThree.classList.toggle("line3-active")
+            burgerMenu.classList.toggle("burger-active")
             //menu.style.color = "red"
             console.log("hi");
         }
